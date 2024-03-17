@@ -25,3 +25,6 @@ aapl["lag1"]=aapl.shift(periods=1)
 #aapl["Diff"]=aapl.AAPL.sub(aapl.lag1)
 aapl["Daily Change"]=aapl.AAPL.div(aapl.lag1).sub(1).mul(100)
 #aapl["% Change 2"]=aapl.AAPL.pct_change(periods=1).mul(100)
+
+##calculate monthly business day percent change
+# aapl.AAPL.resample("BME").last().pct_change(periods=1).mul(100)
